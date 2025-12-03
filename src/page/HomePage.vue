@@ -41,11 +41,12 @@
     },
     setup() {
       class Restaurant {
-        constructor(name, note, image, drive_time) {
+        constructor(name, note, image, drive_time, distance) {
           this.name = name
           this.note = note
           this.image = image
           this.drive_time = drive_time
+          this.distance = distance
         }
       }
       let data_restaurant = ref([])
@@ -56,7 +57,7 @@
 
         for (const restaurant of BDD) {
           const new_restaurant = new Restaurant(restaurant.name, restaurant.note, restaurant.image, restaurant
-            .drive_time)
+            .drive_time, restaurant.distance);
           //Make all restaurant array
           all_restaurant.push(new_restaurant)
 
